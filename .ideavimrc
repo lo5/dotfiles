@@ -1,0 +1,21 @@
+set clipboard+=unnamed
+set incsearch
+set showmatch
+set hlsearch
+
+imap jj <Esc>
+
+" nnoremap / :action Find<CR>
+" nnoremap n :action FindNext<CR>
+" nnoremap N :action FindPrevious<CR>
+nnoremap <Space>d :action GotoDeclaration<CR>
+nnoremap <Space>f :action ReformatCode<CR>
+nnoremap <Space>g :action FileStructurePopup<CR>
+nnoremap <Space>m :action RecentFiles<CR>
+nnoremap <Space>o :action GotoFile<CR>
+nnoremap <Space>p :action GotoClass<CR>
+nnoremap <Space>s :action SearchEverywhere<CR>
+nnoremap <Space>v :action SplitVertically<CR>
+nnoremap <Space>x :action CloseContent<CR>
+noremap <C-h> :action PrevSplitter<CR>
+noremap <C-l> :action NextSplitter<CR>
