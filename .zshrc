@@ -16,7 +16,9 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+alias q='exit'
 alias ls='ls --color=auto'
+alias rr='ranger'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
@@ -48,13 +50,18 @@ alias fastping='ping -c 100 -s.2'
 alias www='python -m SimpleHTTPServer 8000'
 alias ve='python3 -m venv venv'
 alias va='source venv/bin/activate'
-alias gac='git add . && git commit -m .'
+alias gg='lazygit'
+alias save='git add . && git commit -m .'
 alias gpr='git pull --rebase'
 alias godev="cd $HOME/git/wave"
 
 source /usr/share/doc/fzf/examples/key-bindings.zsh
 source /usr/share/doc/fzf/examples/completion.zsh
-export PATH=$PATH:/usr/local/go/bin:$HOME/.local/bin:$HOME/zig
 export RIPGREP_CONFIG_PATH=$HOME/.ripgrep
-export FZF_DEFAULT_COMMAND='fd --type f'
+
+export FZF_DEFAULT_COMMAND='fd --type f --exclude .git --color=always'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd --type d ."
+export FZF_COMPLETION_TRIGGER='jj'
+
+export PATH=$PATH:/usr/local/go/bin:$HOME/.local/bin:$HOME/zig
