@@ -9,6 +9,7 @@ filetype off
 "
 
 call plug#begin('~/.vim/plugged')
+Plug 'altercation/vim-colors-solarized'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-commentary'
 Plug 'fatih/vim-go'
@@ -35,6 +36,8 @@ let mapleader = "\<Space>"
 if $TERM == "xterm-256color" || $TERM == "screen-256color" || $COLORTERM == "gnome-terminal"
   set t_Co=256
 endif
+set background=dark
+colorscheme solarized
 
 set novisualbell
 set encoding=utf-8
@@ -70,7 +73,6 @@ set wrapmargin=0
 set formatoptions=qrn1
 set colorcolumn=101
 highlight ColorColumn ctermbg=0
-set background=dark
 
 
 " -----------------------------------------------------------------------------
@@ -246,7 +248,9 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 imap jj <Esc>
 nnoremap <leader>q :q<CR>
+nnoremap <leader>Q :q!<CR>
 nnoremap <leader>d :bd<CR>
+nnoremap <leader>D :bd!<CR>
 nnoremap <leader>o :Files<CR>
 nnoremap <leader>h :History<CR>
 nnoremap <leader>b :Buffers<CR>

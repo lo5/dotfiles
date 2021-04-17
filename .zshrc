@@ -59,7 +59,7 @@ source /usr/share/doc/fzf/examples/key-bindings.zsh
 source /usr/share/doc/fzf/examples/completion.zsh
 export RIPGREP_CONFIG_PATH=$HOME/.ripgrep
 
-export FZF_DEFAULT_COMMAND='fd --type f --exclude .git --color=always'
+export FZF_DEFAULT_COMMAND='fd --type f --exclude .git'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd --type d ."
 export FZF_COMPLETION_TRIGGER='jj'
