@@ -1,5 +1,3 @@
-PROMPT='%(?.%F{green}√.%F{red}?%?)%f %B%F{240}%1~%f%b %# '
-
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
@@ -16,6 +14,15 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+# Base16 Shell
+BASE16_SHELL="$HOME/.config/base16-shell/"
+[ -n "$PS1" ] && \
+    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+            eval "$("$BASE16_SHELL/profile_helper.sh")"
+
+base16_onedark
+
+# Aliases
 alias q='exit'
 alias ls='ls --color=auto'
 alias rr='ranger'
@@ -27,7 +34,7 @@ alias la='ls -A'
 alias l='ls -CF'
 alias mkdir='mkdir -pv'
 alias wget='wget -c'
-alias update='sudo apt-get update && sudo apt-get upgrade'
+alias update='sudo pacman -Syu'
 alias top='htop'
 alias du="du -ach | sort -h"
 alias mem='free -mlt'
@@ -53,15 +60,16 @@ alias va='source venv/bin/activate'
 alias gg='lazygit'
 alias save='git add . && git commit -m .'
 alias gpr='git pull --rebase'
-alias godev="cd $HOME/git/wave"
+alias godev="cd $HOME/git/h2oai/wave"
 
-source /usr/share/doc/fzf/examples/key-bindings.zsh
-source /usr/share/doc/fzf/examples/completion.zsh
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
 export RIPGREP_CONFIG_PATH=$HOME/.ripgrep
 
 export FZF_DEFAULT_COMMAND='fd --type f --exclude .git'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd --type d ."
 export FZF_COMPLETION_TRIGGER='jj'
+export BAT_THEME="OneHalfDark"
 
-export PATH=$PATH:/usr/local/go/bin:$HOME/.local/bin:$HOME/zig
+export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin:$HOME/.local/bin:$HOME/zig

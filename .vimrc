@@ -9,10 +9,9 @@ filetype off
 "
 
 call plug#begin('~/.vim/plugged')
-Plug 'altercation/vim-colors-solarized'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-commentary'
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'jpalardy/vim-slime'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-vinegar'
@@ -20,6 +19,7 @@ Plug 'ziglang/zig.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'chriskempson/base16-vim'
 call plug#end()
 
 let $FZF_DEFAULT_COMMAND = 'fd --type f'
@@ -36,8 +36,12 @@ let mapleader = "\<Space>"
 if $TERM == "xterm-256color" || $TERM == "screen-256color" || $COLORTERM == "gnome-terminal"
   set t_Co=256
 endif
+
 set background=dark
-colorscheme solarized
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
 
 set novisualbell
 set encoding=utf-8
