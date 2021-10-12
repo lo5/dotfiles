@@ -42,4 +42,7 @@ xset r rate 180 60
 # Remap capslock to ctrl
 setxkbmap -option caps:ctrl_modifier
 
+# Fix IntelliJ windowing
+export _JAVA_AWT_WM_NONREPARENTING=1
+
 exec bspwm

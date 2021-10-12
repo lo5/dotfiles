@@ -14,24 +14,35 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-# Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/"
-[ -n "$PS1" ] && \
-    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
-            eval "$("$BASE16_SHELL/profile_helper.sh")"
+# Prompt
+autoload -Uz vcs_info
+zstyle ':vcs_info:git:*' formats ' (%b)'
+precmd() { vcs_info }
+setopt PROMPT_SUBST
+NL=$'\n'
+PROMPT='
+%n@%m:%B%F{blue}%~%f%b${vcs_info_msg_0_}
+$ '
 
-base16_onedark
+# Base16 Shell
+BASE_16_THEME="$HOME/.config/base16-shell/scripts/base16-onedark.sh"
+[ -n "$PS1" ] && \
+    [ -s "$BASE_16_THEME" ] && \
+            source "$BASE_16_THEME"
 
 # Aliases
 alias q='exit'
+alias rmf='rm -rf'
 alias ls='ls --color=auto'
 alias rr='ranger'
+alias feh='feh -dqp.'
+alias fehm='feh -m' # montage
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
+alias ll='exa -alF'
+alias la='exa -A'
+alias l='exa -F'
 alias mkdir='mkdir -pv'
 alias wget='wget -c'
 alias update='sudo pacman -Syu'
@@ -57,10 +68,15 @@ alias fastping='ping -c 100 -s.2'
 alias www='python -m SimpleHTTPServer 8000'
 alias ve='python3 -m venv venv'
 alias va='source venv/bin/activate'
+alias vd='deactivate'
 alias gg='lazygit'
+alias gs='git status'
+alias gl='git log --oneline'
 alias save='git add . && git commit -m .'
 alias gpr='git pull --rebase'
-alias godev="cd $HOME/git/h2oai/wave"
+alias dev="cd $HOME/git/h2oai/wave"
+alias web="cd $HOME/git/lo5/lo5.github.io"
+alias todo="cd $HOME/git/lo5/lo5.github.io; vim todo.md"
 
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
@@ -72,4 +88,10 @@ export FZF_ALT_C_COMMAND="fd --type d ."
 export FZF_COMPLETION_TRIGGER='jj'
 export BAT_THEME="OneHalfDark"
 
+export R_LIBS_USER=$HOME/.r-libs
 export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin:$HOME/.local/bin:$HOME/zig
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+

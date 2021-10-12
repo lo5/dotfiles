@@ -20,6 +20,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'chriskempson/base16-vim'
+Plug 'kchmck/vim-coffee-script'
 call plug#end()
 
 let $FZF_DEFAULT_COMMAND = 'fd --type f'
@@ -309,6 +310,7 @@ vnoremap <F1> <ESC>
 " Cycle through quickfix 
 nnoremap <F2> :cprev<CR> :norm! zz<CR>
 nnoremap <F3> :cnext<CR> :norm! zz<CR>
+nnoremap <F5> m'A<C-R>="# ".strftime('%Y-%m-%dT%H:%M:%S')<CR><Esc>``
 " nnoremap <kMultiply> :cc<CR> :norm! zz<CR>
 nnoremap <F10> :copen<CR>
 nnoremap <F9> :cclose<CR>
