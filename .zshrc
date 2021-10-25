@@ -1,12 +1,10 @@
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
-setopt beep
-unsetopt autocd extendedglob nomatch
+HISTSIZE=10000
+SAVEHIST=10000
+unsetopt autocd
 bindkey -v
 # End of lines configured by zsh-newuser-install
-
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/elp/.zshrc'
 
@@ -32,6 +30,9 @@ BASE_16_THEME="$HOME/.config/base16-shell/scripts/base16-onedark.sh"
 
 # Aliases
 alias q='exit'
+alias fd='fdfind'
+alias bat='batcat'
+alias vim='~/bin/nvim.appimage'
 alias rmf='rm -rf'
 alias ls='ls --color=auto'
 alias rr='ranger'
@@ -78,20 +79,24 @@ alias dev="cd $HOME/git/h2oai/wave"
 alias web="cd $HOME/git/lo5/lo5.github.io"
 alias todo="cd $HOME/git/lo5/lo5.github.io; vim todo.md"
 
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
+source /usr/share/doc/fzf/examples/key-bindings.zsh
+source /usr/share/doc/fzf/examples/completion.zsh
 export RIPGREP_CONFIG_PATH=$HOME/.ripgrep
+
+export VISUAL=~/bin/nvim.appimage
+export EDITOR=~/bin/nvim.appimage
 
 export FZF_DEFAULT_COMMAND='fd --type f --exclude .git'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd --type d ."
 export FZF_COMPLETION_TRIGGER='jj'
-export BAT_THEME="OneHalfDark"
 
 export R_LIBS_USER=$HOME/.r-libs
-export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin:$HOME/.local/bin:$HOME/zig
+export PATH=$PATH:$HOME/.local/bin
+export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
+export PATH=$PATH:$HOME/bin/zig:$HOME/git/zls/zig-out/bin
+export PATH=$PATH:$HOME/bin/flutter/bin
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
