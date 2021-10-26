@@ -1,0 +1,9 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+    {
+        "key": "j",
+        "command": "vscode-neovim.compositeEscape1",
+        "when": "neovim.mode == insert && editorTextFocus",
+        "arg": "j"
+    }
+]
