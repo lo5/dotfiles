@@ -78,6 +78,7 @@ alias gpr='git pull --rebase'
 alias dev="cd $HOME/git/h2oai/wave"
 alias web="cd $HOME/git/lo5/lo5.github.io"
 alias todo="cd $HOME/git/lo5/lo5.github.io; vim todo.md"
+alias timediff="python3 $HOME/bin/timediff.py"
 
 source /usr/share/doc/fzf/examples/key-bindings.zsh
 source /usr/share/doc/fzf/examples/completion.zsh
