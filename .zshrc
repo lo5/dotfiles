@@ -87,9 +87,9 @@ export RIPGREP_CONFIG_PATH=$HOME/.ripgrep
 export VISUAL=~/bin/nvim.appimage
 export EDITOR=~/bin/nvim.appimage
 
-export FZF_DEFAULT_COMMAND='fd --type f --exclude .git'
+export FZF_DEFAULT_COMMAND='fdfind --type f --exclude .git'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_ALT_C_COMMAND="fd --type d ."
+export FZF_ALT_C_COMMAND="fdfind --type d ."
 export FZF_COMPLETION_TRIGGER='jj'
 
 export R_LIBS_USER=$HOME/.r-libs
@@ -101,3 +101,7 @@ export PATH=$PATH:$HOME/bin/flutter/bin
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
