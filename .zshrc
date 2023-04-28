@@ -29,6 +29,7 @@ BASE_16_THEME="$HOME/.config/base16-shell/scripts/base16-onedark.sh"
             source "$BASE_16_THEME"
 
 # Aliases
+alias rgf='rg --files | rg'
 alias q='exit'
 alias fd='fdfind'
 alias bat='batcat'

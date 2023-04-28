@@ -1,20 +1,24 @@
 set clipboard+=unnamed
 set incsearch
-set showmatch
 set hlsearch
+set ignorecase
 
+nnoremap / /\v
 imap jj <Esc>
 
-" nnoremap / :action Find<CR>
-" nnoremap n :action FindNext<CR>
-" nnoremap N :action FindPrevious<CR>
+" Use :actionlist [pattern] to find command names
 nnoremap <Space>d :action GotoDeclaration<CR>
+nnoremap <Space>e :action ActivateProblemsViewToolWindow<CR>
 nnoremap <Space>f :action ReformatCode<CR>
 nnoremap <Space>g :action FileStructurePopup<CR>
+nnoremap <Space>h :action Back<CR>
+nnoremap <Space>j :action Forward<CR>
 nnoremap <Space>m :action RecentFiles<CR>
+nnoremap <Space>n :action GotoNextError<CR>
 nnoremap <Space>o :action GotoFile<CR>
-nnoremap <Space>p :action GotoClass<CR>
+nnoremap <Space>p :action GotoPreviousError<CR>
 nnoremap <Space>s :action SearchEverywhere<CR>
+nnoremap <Space>u :action FindUsages<CR>
 nnoremap <Space>v :action SplitVertically<CR>
 nnoremap <Space>x :action CloseContent<CR>
 noremap <C-h> :action PrevSplitter<CR>
