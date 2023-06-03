@@ -82,6 +82,7 @@ alias dev="cd $HOME/git/h2oai/wave"
 alias web="cd $HOME/git/lo5/lo5.github.io"
 alias todo="cd $HOME/git/lo5/lo5.github.io; vim todo.md"
 alias timediff="python3 $HOME/bin/timediff.py"
+alias beep="paplay /usr/share/sounds/Pop/stereo/alert/alarm-clock-elapsed.oga"
 
 source /usr/share/doc/fzf/examples/key-bindings.zsh
 source /usr/share/doc/fzf/examples/completion.zsh
@@ -97,6 +98,7 @@ export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
 export PATH=$PATH:$HOME/bin/zig:$HOME/git/zls/zig-out/bin
 export PATH=$PATH:$HOME/bin/flutter/bin
+export TESSDATA_PREFIX=/usr/share/tesseract-ocr/4.00/tessdata
 
 # CUDA
 export PATH=/usr/local/cuda-12.0/bin${PATH:+:${PATH}}
