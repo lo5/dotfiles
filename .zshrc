@@ -48,7 +48,7 @@ alias mkdir='mkdir -pv'
 alias wget='wget -c'
 alias update='sudo apt update'
 alias upgrade='sudo apt upgrade'
-alias top='htop'
+alias top='bpytop'
 alias du="du -ach | sort -h"
 alias mem='free -mlt'
 alias psmem='ps auxf | sort -nr -k 4'
@@ -56,8 +56,9 @@ alias psmem10='ps auxf | sort -nr -k 4 | head -10'
 alias pscpu='ps auxf | sort -nr -k 3'
 alias pscpu10='ps auxf | sort -nr -k 3 | head -10'
 alias tarf='tar -cvzf '
+alias untarz='tar -xvzf '
 alias tarj='tar -cvjf '
-alias untar='tar -xvzf '
+alias untarj='tar -xvjf '
 alias c='clear'
 alias ..='cd ..'
 alias ...='cd ../../../'
@@ -86,9 +87,6 @@ source /usr/share/doc/fzf/examples/key-bindings.zsh
 source /usr/share/doc/fzf/examples/completion.zsh
 export RIPGREP_CONFIG_PATH=$HOME/.ripgrep
 
-export VISUAL=~/bin/nvim.appimage
-export EDITOR=~/bin/nvim.appimage
-
 export FZF_DEFAULT_COMMAND='fdfind --type f --exclude .git'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fdfind --type d ."
@@ -99,6 +97,10 @@ export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin
 export PATH=$PATH:$HOME/bin/zig:$HOME/git/zls/zig-out/bin
 export PATH=$PATH:$HOME/bin/flutter/bin
+
+# CUDA
+export PATH=/usr/local/cuda-12.0/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda-12.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
