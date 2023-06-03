@@ -1,7 +1,7 @@
 set -x
 
 # basic
-sudo apt install git tmux zip zsh ranger ripgrep fd-find bat exa htop fzf
+sudo apt install git tmux zip zsh ranger ripgrep fd-find bat exa htop fzf pbzip2
 
 # pyenv
 sudo apt install build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev curl libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
