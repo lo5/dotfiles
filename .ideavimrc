@@ -23,3 +23,26 @@ nnoremap <Space>v :action SplitVertically<CR>
 nnoremap <Space>x :action CloseContent<CR>
 noremap <C-h> :action PrevSplitter<CR>
 noremap <C-l> :action NextSplitter<CR>
+
+" Bookmarks
+nnoremap mA :action ToggleBookmark0<CR>
+nnoremap mB :action ToggleBookmark1<CR>
+nnoremap mC :action ToggleBookmark2<CR>
+nnoremap mD :action ToggleBookmark3<CR>
+nnoremap mE :action ToggleBookmark4<CR>
+nnoremap mF :action ToggleBookmark5<CR>
+nnoremap mG :action ToggleBookmark6<CR>
+nnoremap mH :action ToggleBookmark7<CR>
+nnoremap mI :action ToggleBookmark8<CR>
+nnoremap mJ :action ToggleBookmark9<CR>
+
+nnoremap `A :action GotoBookmark0<CR>
+nnoremap `B :action GotoBookmark1<CR>
+nnoremap `C :action GotoBookmark2<CR>
+nnoremap `D :action GotoBookmark3<CR>
+nnoremap `E :action GotoBookmark4<CR>
+nnoremap `F :action GotoBookmark5<CR>
+nnoremap `G :action GotoBookmark6<CR>
+nnoremap `H :action GotoBookmark7<CR>
+nnoremap `I :action GotoBookmark8<CR>
+nnoremap `J :action GotoBookmark9<CR>
