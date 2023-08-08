@@ -5,7 +5,7 @@ mkdir -p ~/git
 # basic
 sudo apt install git tmux zip zsh ranger ripgrep fd-find bat exa htop fzf pbzip2 bpytop
 
-# pyenv
+# python
 sudo apt install build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev curl libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
 
 # nvm
@@ -62,8 +62,10 @@ wget https://go.dev/dl/go1.21.0.linux-amd64.tar.gz
 sudo tar -C /usr/local -xzf go1.21.0.linux-amd64.tar.gz
 rm go1.21.0.linux-amd64.tar.gz
 
-# py
+# pyenv
 curl https://pyenv.run | bash
+pyenv update
+pyenv install 3.10
 
 # docker
 sudo apt install ca-certificates curl gnupg
@@ -74,7 +76,7 @@ sudo docker run hello-world
 sudo chsh -s $(which zsh) $(whoami)
 logout
 
-
+# lazygit
 go install github.com/jesseduffield/lazygit@latest
 
 # nvidia container toolkit
