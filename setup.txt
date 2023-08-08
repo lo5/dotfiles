@@ -1,5 +1,7 @@
 set -x
 
+mkdir -p ~/git
+
 # basic
 sudo apt install git tmux zip zsh ranger ripgrep fd-find bat exa htop fzf pbzip2 bpytop
 
@@ -19,6 +21,7 @@ mkdir -p nvtop/build && cd nvtop/build
 cmake .. -DNVIDIA_SUPPORT=ON -DAMDGPU_SUPPORT=ON -DINTEL_SUPPORT=ON
 make
 sudo make install
+cd
 
 
 # gh
@@ -32,11 +35,12 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo 
 git config --global user.email "prithvi.prabhu@gmail.com"
 git config --global user.name lo5
 gh auth login
+# URL: https://github.com/login/device
 
 # dotfiles
-mkdir -p git
-git clone https://github.com/lo5/dotfiles.git git/
-cp git/dotfiles/.config/ranger/rc.conf .config/ranger/
+git clone https://github.com/lo5/dotfiles.git ~/git
+mkdir -p ~/.config/ranger
+cp git/dotfiles/.config/ranger/rc.conf ~/.config/ranger/
 cp git/dotfiles/.ripgrep .
 cp git/dotfiles/.tmux.conf .
 cp git/dotfiles/.vimrc .
@@ -54,9 +58,9 @@ aws configure
 
 # go
 sudo rm -rf /usr/local/go
-wget https://go.dev/dl/go1.20.4.linux-amd64.tar.gz
-sudo tar -C /usr/local -xzf go1.20.4.linux-amd64.tar.gz
-rm go1.20.4.linux-amd64.tar.gz
+wget https://go.dev/dl/go1.21.0.linux-amd64.tar.gz
+sudo tar -C /usr/local -xzf go1.21.0.linux-amd64.tar.gz
+rm go1.21.0.linux-amd64.tar.gz
 
 # py
 curl https://pyenv.run | bash
